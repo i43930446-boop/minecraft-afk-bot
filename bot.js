@@ -1,48 +1,25 @@
 const mineflayer = require('mineflayer');
 
-const options = {
-  host: hyxSMP.aternos.me
-  port: 25565,
-  username: 'FlameFrags16',
-  version: '1.20.1' // Promeni verziju ako je potrebno
-};
+function startBot() {
+  const bot = mineflayer.createBot({
+    host: 'hyxSMP.aternos.me',
+    port: 25565,
+    username: 'Player1',
+    version: '1.21.11'
+  });
 
-const bot = mineflayer.createBot(options);
+  bot.on('spawn', () => {
+    console.log('Player1 je usao na server!');
+  });
 
-bot.on('login', () => {
-  console.log('✓ Ulogovan na server!');
-  
-  // Čekaj malo pa registruj se
-  setTimeout(() => {
-    bot.chat('/register FlameFrags1 Flamefrags1');
-    console.log('✓ Poslata registracija komanda!');
-  }, 2000);
-});
+  bot.on('end', () => {
+    console.log('Bot se diskonektovao. Ponovno povezivanje za 10 sekundi...');
+    setTimeout(startBot, 10000);
+  });
 
-bot.on('message', (message) => {
-  const msg = message.toString();
-  console.log(`[Chat] ${msg}`);
-  
-  // Ako se vidi poruka o uspešnoj registraciji
-  if (msg.includes('registered') || msg.includes('Registered')) {
-    console.log('✓ Registracija uspešna!');
-  }
-});
+  bot.on('error', (err) => {
+    console.log('Bot error:', err.message);
+  });
+}
 
-bot.on('error', (err) => {
-  console.error('❌ Greška:', err);
-});
-
-bot.on('end', () => {
-  console.log('Bot je odspojио');
-});
-
-// Sprečavanje AFK kicka - mali periodic klik
-setInterval(() => {
-  bot.setControlState('jump', true);
-  setTimeout(() => {
-    bot.setControlState('jump', false);
-  }, 100);
-}, 30000); // Svaki 30 sekundi
-
-console.log('🚀 Pokretanje Minecraft AFK bota...');
+startBot();
