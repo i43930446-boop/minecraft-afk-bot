@@ -1,9 +1,9 @@
 const mineflayer = require('mineflayer');
 
 const options = {
-  host: 'localhost', // Promeni na server adresu
+  host: hyxSMP.aternos.me
   port: 25565,
-  username: 'FlameFrags1',
+  username: 'FlameFrags16',
   version: '1.20.1' // Promeni verziju ako je potrebno
 };
 
