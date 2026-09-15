@@ -10,6 +10,14 @@ function startBot() {
 
   bot.on('spawn', () => {
     console.log('Player1 je usao na server!');
+
+    setTimeout(() => {
+      bot.chat('/register FlameFrags1 FlameFrags1');
+    }, 3000);
+
+    setTimeout(() => {
+      bot.chat('/login FlameFrags1');
+    }, 6000);
   });
 
   bot.on('end', () => {
