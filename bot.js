@@ -2,7 +2,7 @@ const mineflayer = require('mineflayer');
 
 function startBot() {
   const bot = mineflayer.createBot({
-    host: 'hyxSMP.aternos.me',
+    host: 'Flodedsmp.aternos.me',
     port: 25565,
     username: 'Player1',
     version: '1.21.11'
