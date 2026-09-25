@@ -4,7 +4,7 @@ function startBot() {
   const bot = mineflayer.createBot({
     host: 'RavageSMP.aternos.me:37712',
     port: 25565,
-    username: 'Player1',
+    username: 'Player67',
     version: '1.21.11'
   });
 
@@ -12,11 +12,11 @@ function startBot() {
     console.log('Player1 je usao na server!');
 
     setTimeout(() => {
-      bot.chat('/register FlameFrags1 FlameFrags1');
+      bot.chat('/register FlameFrags61 FlameFrags61');
     }, 3000);
 
     setTimeout(() => {
-      bot.chat('/login FlameFrags1');
+      bot.chat('/login FlameFrags61');
     }, 6000);
   });
 
