@@ -2,9 +2,9 @@ const mineflayer = require('mineflayer');
 
 function startBot() {
   const bot = mineflayer.createBot({
-    host: 'RavageSMP.aternos.me:37712',
+    host: 'MISTSMP-paid.aternos.me',
     port: 25565,
-    username: 'Player67',
+    username: 'Playetr67',
     version: '1.21.11'
   });
 
